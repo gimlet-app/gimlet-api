@@ -87,3 +87,36 @@ Returns a JSON object with one attribute: `questions` which is an array of quest
 * `account` String. Account name
 * `question` String. Question text
 * `answer` String. Answer text
+
+You can also get the data in CSV format. You can do this either by setting the request header `Accept: text/csv` or by changing `/questions` to `/questions.csv` in your URL.
+
+#### Adding a question
+
+```
+POST https://<yourdomain>.gimlet.us/api/v1/sites/<site_id>/questions
+```
+
+##### Facet ID or Name?
+
+To make things a bit easier, you can either refer to facets by their ID (eg, `location_id`) or name (eg, `location_name`). If you include both in your request, the behavior is undefined — one of them will win but you won't know which one.
+
+The following parameters are **required**:
+
+* `site_id`
+* `question[location_name]` or `question[location_id]`
+* `question[duration_name]` or `question[duration_id]`
+* `question[format_name]` or `question[format_id]`
+* `question[question_type_name]` or `question[question_type_id]`
+* `question[questioner_name]` or `question[questioner_id]`
+
+The following parameters are **optional**:
+
+* `question[difficulty_name]` or `question[difficulty_id]`
+* `question[tag_list]`
+* `question[initials]`
+* `question[question]`
+* `question[answer]`
+* `question[asked_at_time]` (24-hour, local time)
+* `question[asked_at_date]` (mm/dd/yyyy)
+
+
