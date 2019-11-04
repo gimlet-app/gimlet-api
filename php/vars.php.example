@@ -1,0 +1,6 @@
+<?php
+$DOMAIN = "<your_gimlet_domain>";  // Without .gimlet.us
+$EMAIL = "<your_email>";
+$API_KEY = "<your_key>";
+$SITE_ID = 0;  // Get from listing branches or looking at the URL in the new qustion form
+?>
