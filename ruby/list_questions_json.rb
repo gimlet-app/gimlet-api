@@ -13,7 +13,7 @@ today = Date.today
 thirty_days_ago = today - 30
 
 # URL and Path
-url = "https://#{domain}.gimlet.us";
+url = "https://#{domain}.gimlet.us"
 path = "/api/v1/sites/#{site_id}/questions?start_date=#{thirty_days_ago.to_s}}&end_date=#{today.to_s}"
 
 # New connection with base URL and path
