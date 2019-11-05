@@ -26,35 +26,6 @@ https://<yourdomain>.gimlet.us/api/v1/
 
 Use HTTP Basic authentication; username is your Gimlet email, and password is your API key.
 
-### Branches (aka "sites")
-
-```
-GET https://<yourdomain>.gimlet.us/api/v1/sites
-```
-
-Returns a JSON object with one attribute: `branches` which is an array of objects containing the following attributes:
-
-* `id` Integer, indicating the id of this branch/site.
-* `name` String.
-* `status` String, will be 'active', 'archive_pending', or 'archived'
-* `question_count` Integer, indicates the current number of questions for this branch/site.
-* `use_initials` Boolean, true if initials are stored with questions
-* `use_difficulty` Boolean, true if difficulty is enabled
-* `use_qa` Boolean, true if question/answer text are stored with questions
-* `use_tagging` Boolean, true if tags are stored with questions
-
-### Facets
-
-```
-GET https://<yourdomain>.gimlet.us/api/v1/sites/<site_id>/facets
-```
-
-Returns a JSON object with one attribute: `facets` which is an array of objects containing the following attributes:
-
-* `id` Integer, indicating the ID of this facet
-* `type` String. One of 'Duration', 'Format', 'Location', 'Questioner', 'QuestionType', 'Difficulty'
-* `name` String.
-
 ### Questions
 
 #### Listing questions
@@ -90,6 +61,8 @@ Returns a JSON object with one attribute: `questions` which is an array of quest
 
 You can also get the data in CSV format. You can do this either by setting the request header `Accept: text/csv` or by changing `/questions` to `/questions.csv` in your URL.
 
+Note that there is **no pagination** on these requests. If you request a date range with a million questions, we'll stream them all to you. Be ready.
+
 #### Adding a question
 
 ```
@@ -118,5 +91,34 @@ The following parameters are **optional**:
 * `question[answer]`
 * `question[asked_at_time]` (24-hour, local time)
 * `question[asked_at_date]` (mm/dd/yyyy)
+
+### Branches (aka "sites")
+
+```
+GET https://<yourdomain>.gimlet.us/api/v1/sites
+```
+
+Returns a JSON object with one attribute: `branches` which is an array of objects containing the following attributes:
+
+* `id` Integer, indicating the id of this branch/site.
+* `name` String.
+* `status` String, will be 'active', 'archive_pending', or 'archived'
+* `question_count` Integer, indicates the current number of questions for this branch/site.
+* `use_initials` Boolean, true if initials are stored with questions
+* `use_difficulty` Boolean, true if difficulty is enabled
+* `use_qa` Boolean, true if question/answer text are stored with questions
+* `use_tagging` Boolean, true if tags are stored with questions
+
+### Facets
+
+```
+GET https://<yourdomain>.gimlet.us/api/v1/sites/<site_id>/facets
+```
+
+Returns a JSON object with one attribute: `facets` which is an array of objects containing the following attributes:
+
+* `id` Integer, indicating the ID of this facet
+* `type` String. One of 'Duration', 'Format', 'Location', 'Questioner', 'QuestionType', 'Difficulty'
+* `name` String.
 
 
