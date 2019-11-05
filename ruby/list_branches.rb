@@ -9,7 +9,7 @@ site_id = 'your_site_id'
 
 # URL and Path
 url = "https://#{domain}.gimlet.us"
-path = "/api/v1/sites"
+path = "/api/v1/sites.json"
 
 # New connection with base URL and path
 conn = Faraday.new(url: url)    # New connection with base URL

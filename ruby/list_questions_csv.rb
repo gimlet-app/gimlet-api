@@ -14,7 +14,7 @@ thirty_days_ago = today - 30
 
 # URL and Path
 url = "https://#{domain}.gimlet.us"
-path = "/api/v1/sites/#{site_id}/questions?start_date=#{thirty_days_ago.to_s}}&end_date=#{today.to_s}"
+path = "/api/v1/sites/#{site_id}/questions.csv?start_date=#{thirty_days_ago.to_s}&end_date=#{today.to_s}"
 
 # New connection with base URL, path, and accepting CSV
 conn = Faraday.new(url: url, headers: {'Accept': 'text/csv'})
