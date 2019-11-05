@@ -10,7 +10,7 @@ If this guide isn't enough for you, please file an issue or contact support@giml
 
 To get an API key, have an administrator head to:
 
-Account -> Branches -> Users
+Account -> Branches -> Users -> (Choose an Email)
 
 and click the "Generate API Key" button.
 
