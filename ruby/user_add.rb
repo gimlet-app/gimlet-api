@@ -6,12 +6,10 @@ require 'json'
 #
 
 # Required API Variables
-domain  = 'your_domain'
-email   = 'your_email_address'
-api_key = 'your_api_key'
+require './vars.rb'
 
 # URL and Path
-url = "https://#{domain}.gimlet.us"
+url = "https://#{DOMAIN}.gimlet.us"
 path = "/api/v1/users.json"
 
 # Example User values
@@ -22,8 +20,9 @@ params['user']['site_ids']= [1,2]            # Your site ids for membership
 
 # New connection with base URL and path
 conn = Faraday.new(url: url)              # New connection with base URL
-conn.basic_auth(email, api_key)           # Set the authentication header
+conn.basic_auth(EMAIL, API_KEY)           # Set the authentication header
 response = conn.post(path, params)        # POST API request
 
-# Do what you need with the data
-results = response.body
+# Print the results
+results = JSON.parse(response.body)
+puts "RESULTS: #{results.inspect}"

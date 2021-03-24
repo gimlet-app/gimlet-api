@@ -6,19 +6,21 @@ require 'json'
 #
 
 # Required API Variables
-domain  = 'your_domain'
-email   = 'your_email_address'
-api_key = 'your_api_key'
-user_id = 1                               # User ID to destroy
+require './vars.rb'
+
+# Set API method variables
+user_id = 1                               # User ID to destroy /
+                                          # You cannot destroy your own account
 
 # URL and Path
-url = "https://#{domain}.gimlet.us"
+url = "https://#{DOMAIN}.gimlet.us"
 path = "/api/v1/users/#{user_id}.json"
 
 # New connection with base URL and path
 conn = Faraday.new(url: url)              # New connection with base URL
-conn.basic_auth(email, api_key)           # Set the authentication header
-response = conn.delete(path, params)      # DELETE API request
+conn.basic_auth(EMAIL, API_KEY)           # Set the authentication header
+response = conn.delete(path)              # DELETE API request
 
-# Do what you need with the data
-results = response.body
+# Print the results
+results = JSON.parse(response.body)
+puts "RESULTS: #{results.inspect}"

@@ -2,7 +2,7 @@ require 'faraday'
 require 'json'
 
 #
-# List all Users within an Account
+# List all Facets from a Branch/Site
 #
 
 # Required API Variables
@@ -10,7 +10,7 @@ require './vars.rb'
 
 # URL and Path
 url = "https://#{DOMAIN}.gimlet.us"
-path = "/api/v1/users.json"
+path = "/api/v1/sites/#{SITE_ID}/facets.json"
 
 # New connection with base URL and path
 conn = Faraday.new(url: url)    # New connection with base URL
