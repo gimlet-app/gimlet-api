@@ -15,7 +15,7 @@ path = "/api/v1/users.json"
 # Example User values
 params = {}
 params['user'] = {}
-params['user']['email'] = 'example@test.com' # New email/user to create
+params['user']['email'] = 'example@library.org' # New email/user to create
 params['user']['site_ids']= [1,2]            # Your site ids for membership
 
 # New connection with base URL and path

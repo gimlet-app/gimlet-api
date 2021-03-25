@@ -19,4 +19,4 @@ response = conn.get(path)       # GET API request
 
 # Print the results
 results = JSON.parse(response.body)
-puts "RESULTS: #{results.inspect}"
+puts "RESULTS: #{results.to_json}"

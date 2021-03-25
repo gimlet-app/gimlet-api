@@ -14,16 +14,16 @@ require './vars.rb'
 # Set API method variables
 user_id = 1                                  # User ID to update
 
-# Example User values
-params = {}
-params['user'] = {}
-params['user']['email'] = 'jane@library.org' # Update user email address
-params['user']['site_ids']= [1,2]            # Update site ids for membership /
-                                             # Cannot be an empty array
-
 # URL and Path
 url = "https://#{DOMAIN}.gimlet.us"
 path = "/api/v1/users/#{user_id}.json"
+
+# Example User values
+params = {}
+params['user'] = {}
+params['user']['email'] = 'jane_doe@library.org' # Update user email address
+params['user']['site_ids']= [1,2]            # Update site ids for membership /
+                                             # Cannot be an empty array
 
 # New connection with base URL and path
 conn = Faraday.new(url: url)                 # New connection with base URL
