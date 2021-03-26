@@ -9,8 +9,8 @@ require 'json'
 require './vars.rb'
 
 # Set API method variables
-user_id = 1                               # User ID to destroy /
-                                          # You cannot destroy your own account
+user_id = 1 # User ID to destroy /
+            # You cannot destroy your own account
 
 # URL and Path
 url = "https://#{DOMAIN}.gimlet.us"
