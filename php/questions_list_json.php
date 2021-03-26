@@ -1,5 +1,5 @@
 <?php
-require 'vars.php';
+require './vars.php';
 
 $thirty_days_ago = date('Y-m-d', strtotime('-30 days'));
 $today = date('Y-m-d');
