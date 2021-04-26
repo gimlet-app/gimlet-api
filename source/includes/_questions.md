@@ -263,10 +263,13 @@ echo("${response_code} ${data}");
 // ?>
 ```
 
-> The above command returns PLAIN text structured like this:
+> The above command returns JSON structured like this:
 
-```txt
-"Created"
+```json
+{
+  "status": "success",
+  "message": "Created"
+}
 ```
 
 This endpoint adds a new question.

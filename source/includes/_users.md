@@ -324,10 +324,10 @@ var_dump($data);
 // ?>
 ```
 
-> The above command returns PLAIN text structured like this:
+> The above command returns JSON structured like this:
 
-```txt
-"OK"
+```json
+{"status":"success"}
 ```
 
 This endpoint deletes a user.
