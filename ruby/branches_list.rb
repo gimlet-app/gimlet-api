@@ -1,20 +1,22 @@
 require 'faraday'
 require 'json'
 
+#
+# List all Branches/Sites from an Account
+#
+
 # Required API Variables
-domain  = 'your_domain'
-email   = 'your_email_address'
-api_key = 'your_api_key'
-site_id = 'your_site_id'
+require './vars.rb'
 
 # URL and Path
-url = "https://#{domain}.gimlet.us"
+url = "https://#{DOMAIN}.gimlet.us"
 path = "/api/v1/sites.json"
 
 # New connection with base URL and path
 conn = Faraday.new(url: url)    # New connection with base URL
-conn.basic_auth(email, api_key) # Set the authentication header
+conn.basic_auth(EMAIL, API_KEY) # Set the authentication header
 response = conn.get(path)       # GET API request
 
-# Do what you need with the data
+# Print the results
 results = JSON.parse(response.body)
+puts "RESULTS: #{results.to_json}"

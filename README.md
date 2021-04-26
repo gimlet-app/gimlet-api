@@ -122,3 +122,44 @@ Returns a JSON object with one attribute: `facets` which is an array of objects 
 * `name` String.
 
 
+### Users
+
+#### Listing users
+
+```
+GET https://<yourdomain>.gimlet.us/api/v1/users
+```
+
+Returns a JSON object with one attribute: `users` which is an array of objects containing the following attributes:
+
+* `id` Integer, indicating the ID of this user
+* `email` String.
+* `current_sign_in_at` Timestamp, updated when the user signs in
+* `last_sign_in_at` Timestamp, of the previous sign in
+* `sites` Array. A collection of objects containing site id integers
+
+#### Adding a user
+
+```
+POST https://<yourdomain>.gimlet.us/api/v1/users
+```
+
+The following parameters are **required**:
+* `user[email]`
+* `user[site_ids]`
+
+#### Updating a user
+
+```
+PUT https://<yourdomain>.gimlet.us/api/v1/users/<user_id>
+```
+
+The following parameters are **required**:
+* `user[email]`
+* `user[site_ids]`
+
+#### Deleting a user
+
+```
+DELETE https://<yourdomain>.gimlet.us/api/v1/users/<user_id>
+```
