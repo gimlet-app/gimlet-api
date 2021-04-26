@@ -1,7 +1,0 @@
-# Rename this file to vars.rb for your API calls
-#
-# Required API Variables
-DOMAIN  = 'your_domain'
-EMAIL   = 'your_email_address'
-API_KEY = 'your_api_key'
-SITE_ID = 0 # Get integer from listing branches, or looking at the URL in the new question form
