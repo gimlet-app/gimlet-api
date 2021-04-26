@@ -33,13 +33,15 @@ If this guide isn't enough for you, please create a support ticket by contacting
 
 # Authentication
 
+## API Key Required
+
 To get an API key, have an account administrator head to:
 
 Account -> Branches -> Users -> (Choose an Email)
 
 and click the "Generate API Key" button.
 
-The API key grants a user access to add and query questions for sites they are a member of. Gimlet expects the API key to be included in all API requests to the server.
+The API key grants a user access to add and query questions for sites they are a member of. Gimlet requires the API key to be included in all API requests to the server.
 
 ```ruby
 # Create a file named vars.rb for your API calls
