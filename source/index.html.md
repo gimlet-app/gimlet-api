@@ -6,6 +6,8 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - php
 
 toc_footers:
+  - <a href='https://gimlet.us'>Gimlet Homepage</a>
+  - <a href='mailto:support@gimlet.us'>Contact Us for Support</a>
   - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -25,7 +27,7 @@ code_clipboard: true
 
 Welcome to the [Gimlet](https://gimlet.us) REST API. You can use our API to access Gimlet API endpoints, which can get information on questions, branches, facets, and users from your account in our database.
 
-We have language examples for both Ruby and PHP. You can view the code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+We have language examples for both Ruby and PHP ([download](https://github.com/gimlet-app/gimlet-api)). You can view the code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
 ## Getting help
 
