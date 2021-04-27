@@ -8,6 +8,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
 toc_footers:
   - <a href='https://gimlet.us'>Gimlet Homepage</a>
   - <a href='mailto:support@gimlet.us'>Contact Us for Support</a>
+  - <br/>
   - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
 
 includes:
