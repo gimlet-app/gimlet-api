@@ -9,6 +9,7 @@ $api_url = "https://{$DOMAIN}.gimlet.us/api/v1/users/{$user_id}.json";
 // Change these to be what you actually need!
 $fields = [
   "user[email]=example@library.org",
+  "user[administrator]=true",
   "user[site_ids][]=1",
   "user[site_ids][]=2"
 ];

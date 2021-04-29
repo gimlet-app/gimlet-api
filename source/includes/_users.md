@@ -59,6 +59,7 @@ var_dump($data);
       "email": "jane@library.org",
       "current_sign_in_at": "2021-03-24T10:39:48.000-05:00",
       "last_sign_in_at": "2021-03-23T13:19:42.000-05:00",
+      "administrator":true,
       "sites": [
         {
           "id": 2
