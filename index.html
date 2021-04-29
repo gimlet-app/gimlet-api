@@ -1079,6 +1079,7 @@ Remember — You need an API key to access your data!
 <span class="c1"># Update a User from an Account</span>
 <span class="c1">#</span>
 <span class="c1"># * Add or remove user site memberships</span>
+<span class="c1"># * Grant or revoke the account administrator role</span>
 <span class="c1"># * Update a user's email address</span>
 <span class="c1">#</span>
 
@@ -1096,6 +1097,7 @@ Remember — You need an API key to access your data!
 <span class="n">params</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="n">params</span><span class="p">[</span><span class="s1">'user'</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="n">params</span><span class="p">[</span><span class="s1">'user'</span><span class="p">][</span><span class="s1">'email'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'jane_doe@library.org'</span> <span class="c1"># Update user email address</span>
+<span class="n">params</span><span class="p">[</span><span class="s1">'user'</span><span class="p">][</span><span class="s1">'administrator'</span><span class="p">]</span> <span class="o">=</span> <span class="kp">true</span> <span class="c1"># Grant administrator role</span>
 <span class="n">params</span><span class="p">[</span><span class="s1">'user'</span><span class="p">][</span><span class="s1">'site_ids'</span><span class="p">]</span><span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># Update site ids for membership /</span>
                                 <span class="c1"># Cannot be an empty array</span>
 
@@ -1121,6 +1123,7 @@ Remember — You need an API key to access your data!
 <span class="nv">$fields</span> <span class="o">=</span> <span class="p">[</span>
   <span class="s2">"user[email]=example@library.org"</span><span class="p">,</span>
   <span class="s2">"user[site_ids][]=1"</span><span class="p">,</span>
+  <span class="s2">"user[administrator]=true"</span>
   <span class="s2">"user[site_ids][]=2"</span>
 <span class="p">];</span>
 
@@ -1145,6 +1148,7 @@ Remember — You need an API key to access your data!
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
   </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jane_doe@library.org"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"administrator"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="nl">"site_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="mi">2</span><span class="p">,</span><span class="w">
     </span><span class="mi">1</span><span class="w">
@@ -1166,6 +1170,11 @@ Remember — You need an API key to access your data!
 <td>user[email]</td>
 <td>example@library.org</td>
 <td>Update the EMAIL for an existing user</td>
+</tr>
+<tr>
+<td>user[administrator]</td>
+<td>true/false</td>
+<td>Grant or revoke the account admin role</td>
 </tr>
 <tr>
 <td>user[site_ids]</td>
