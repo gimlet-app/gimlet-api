@@ -179,6 +179,7 @@ require 'json'
 # Update a User from an Account
 #
 # * Add or remove user site memberships
+# * Grant or revoke the account administrator role
 # * Update a user's email address
 #
 
@@ -196,6 +197,7 @@ path = "/api/v1/users/#{user_id}.json"
 params = {}
 params['user'] = {}
 params['user']['email'] = 'jane_doe@library.org' # Update user email address
+params['user']['administrator'] = true # Grant administrator role
 params['user']['site_ids']= [1] # Update site ids for membership /
                                 # Cannot be an empty array
 
@@ -224,6 +226,7 @@ $api_url = "https://{$DOMAIN}.gimlet.us/api/v1/users/{$user_id}.json";
 $fields = [
   "user[email]=example@library.org",
   "user[site_ids][]=1",
+  "user[administrator]=true"
   "user[site_ids][]=2"
 ];
 
@@ -249,6 +252,7 @@ var_dump($parsed);
 {
   "id": 1,
   "email": "jane_doe@library.org",
+  "administrator": true,
   "site_ids": [
     2,
     1
@@ -267,6 +271,7 @@ This endpoint updates an existing user.
 Parameter | Example | Description
 --------- | ----------- | -----------
 user[email]| example@library.org | Update the EMAIL for an existing user
+user[administrator]| true/false | Grant or revoke the account admin role
 user[site_ids]| [1,2] | Update the Branch/Site IDs for user membership
 
 ## Delete User
